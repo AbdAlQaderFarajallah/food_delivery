@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Screens/launch_screen.dart';
+import 'package:food_delivery/Screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/launch_screen',
       routes: {
         '/launch_screen': (context) => const LaunchScreen(),
+        '/login_screen': (context) => const LoginScreen(),
       },
     );
   }

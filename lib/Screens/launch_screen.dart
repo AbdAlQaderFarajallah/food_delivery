@@ -22,6 +22,7 @@ class _LaunchScreenState extends State<LaunchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
         child: Image.asset('assets/images/food-delivery-logo.png'),
       ),
