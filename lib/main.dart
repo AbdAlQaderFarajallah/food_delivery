@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Screens/launch_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/launch_screen',
+      routes: {
+        '/launch_screen': (context) => const LaunchScreen(),
+      },
+    );
   }
 }
