@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/text_form-field.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,9 +18,15 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Image.asset('assets/images/food-delivery-logo.png'),
               const SizedBox(height: 20),
-              const Text('Login',
+              const Text('Register',
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
               const SizedBox(height: 20),
+              TextFormFieldWidget(
+                type: TextInputType.text,
+                hint: 'Name',
+                prefixIcon: const Icon(Icons.person),
+              ),
+              const SizedBox(height: 15),
               TextFormFieldWidget(
                 type: TextInputType.emailAddress,
                 hint: 'Email Address',
@@ -35,27 +41,9 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {},
-                child: const Text('Login'),
+                child: const Text('Register'),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Don\'t have an account?',
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/register_screen');
-                    },
-                    child: const Text(
-                      'Register Now',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 50),
+              const SizedBox(height: 30),
             ],
           ),
         ),
