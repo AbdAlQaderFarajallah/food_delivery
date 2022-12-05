@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Screens/launch_screen.dart';
 import 'package:food_delivery/Screens/login_screen.dart';
+import 'package:food_delivery/Screens/main_food_screen.dart';
 import 'package:food_delivery/Screens/register_screen.dart';
 
 void main() {
@@ -14,11 +15,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/launch_screen',
+      initialRoute: '/main_food_screen',
       routes: {
         '/launch_screen': (context) => const LaunchScreen(),
         '/login_screen': (context) => const LoginScreen(),
         '/register_screen': (context) => const RegisterScreen(),
+        '/main_food_screen': (context) => const MainFoodScreen(),
       },
     );
   }
