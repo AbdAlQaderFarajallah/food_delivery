@@ -97,7 +97,22 @@ class _SliderScreenState extends State<SliderScreen> {
               height: 120,
               margin: const EdgeInsets.only(bottom: 30, left: 30, right: 30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
+                borderRadius: BorderRadius.circular(25),
+                boxShadow: const [
+                  BoxShadow(
+                    color: Color(0xFFe8e8e8),
+                    blurRadius: 5.0,
+                    offset: Offset(0, 5),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(-5, 0),
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(5, 0),
+                  ),
+                ],
                 color: Colors.white,
               ),
               child: Container(
