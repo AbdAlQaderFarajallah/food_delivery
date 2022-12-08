@@ -99,9 +99,9 @@ class _SliderScreenState extends State<SliderScreen> {
         children: [
           Container(
             height: Dimensions.pageViewContainer,
-            margin: const EdgeInsets.symmetric(horizontal: 10),
+            margin: EdgeInsets.symmetric(horizontal: Dimensions.height10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
+              borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: const Color(0xFF69c5df),
               image: const DecorationImage(
                 fit: BoxFit.cover,
@@ -113,9 +113,12 @@ class _SliderScreenState extends State<SliderScreen> {
             alignment: Alignment.bottomCenter,
             child: Container(
               height: Dimensions.pageViewTextContainer,
-              margin: const EdgeInsets.only(bottom: 30, left: 30, right: 30),
+              margin: EdgeInsets.only(
+                  bottom: Dimensions.height30,
+                  left: Dimensions.height30,
+                  right: Dimensions.height30),
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
+                borderRadius: BorderRadius.circular(Dimensions.radius20),
                 boxShadow: const [
                   BoxShadow(
                     color: Color(0xFFe8e8e8),
@@ -152,9 +155,9 @@ class _SliderScreenState extends State<SliderScreen> {
                                 color: AppColors.mainColor, size: 15),
                           ),
                         ),
-                        const SizedBox(width: 10),
+                        SizedBox(width: Dimensions.width10),
                         SmallText('4.5'),
-                        const SizedBox(width: 15),
+                        SizedBox(width: Dimensions.width15),
                         SmallText('150'),
                         const SizedBox(width: 3),
                         SmallText('Comments'),

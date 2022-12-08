@@ -3,6 +3,7 @@ import 'package:food_delivery/Screens/slider.dart';
 import 'package:food_delivery/Widgets/big_text.dart';
 import 'package:food_delivery/Widgets/small_text.dart';
 import 'package:food_delivery/utils/app_colors.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 
 class MainFoodScreen extends StatefulWidget {
   const MainFoodScreen({Key? key}) : super(key: key);
@@ -19,8 +20,9 @@ class _MainFoodScreenState extends State<MainFoodScreen> {
         children: [
           Container(
             child: Container(
-              margin: const EdgeInsets.only(top: 45, bottom: 15),
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+              margin: EdgeInsets.only(
+                  top: Dimensions.height45, bottom: Dimensions.height15),
+              padding: EdgeInsets.symmetric(horizontal: Dimensions.height20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -32,10 +34,11 @@ class _MainFoodScreenState extends State<MainFoodScreen> {
                   ),
                   Center(
                     child: Container(
-                      height: 45,
-                      width: 45,
+                      height: Dimensions.height45,
+                      width: Dimensions.width45,
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius:
+                            BorderRadius.circular(Dimensions.radius15),
                         color: AppColors.mainColor,
                       ),
                       child: const Icon(Icons.search, color: Colors.white),
