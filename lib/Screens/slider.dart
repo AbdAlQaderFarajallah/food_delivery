@@ -2,7 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Widgets/icon_and_text_widget.dart';
 import 'package:food_delivery/Widgets/small_text.dart';
-import 'package:food_delivery/app_colors.dart';
+import 'package:food_delivery/utils/app_colors.dart';
+import 'package:food_delivery/utils/dimensions.dart';
 
 import '../Widgets/big_text.dart';
 
@@ -17,7 +18,7 @@ class _SliderScreenState extends State<SliderScreen> {
   PageController pageController = PageController(viewportFraction: 0.85);
   var _currentPageValue = 0.0;
   double _scaleFactor = 0.8;
-  double _height = 220;
+  double _height = Dimensions.pageViewContainer;
 
   @override
   void initState() {
@@ -40,7 +41,7 @@ class _SliderScreenState extends State<SliderScreen> {
     return Column(
       children: [
         SizedBox(
-          height: 320,
+          height: Dimensions.pageView,
           child: PageView.builder(
             controller: pageController,
             itemCount: 5,
@@ -97,7 +98,7 @@ class _SliderScreenState extends State<SliderScreen> {
       child: Stack(
         children: [
           Container(
-            height: 220,
+            height: Dimensions.pageViewContainer,
             margin: const EdgeInsets.symmetric(horizontal: 10),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
@@ -111,7 +112,7 @@ class _SliderScreenState extends State<SliderScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 120,
+              height: Dimensions.pageViewTextContainer,
               margin: const EdgeInsets.only(bottom: 30, left: 30, right: 30),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
@@ -133,12 +134,15 @@ class _SliderScreenState extends State<SliderScreen> {
                 color: Colors.white,
               ),
               child: Container(
-                padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+                padding: EdgeInsets.only(
+                    top: Dimensions.height15,
+                    left: Dimensions.height15,
+                    right: Dimensions.height15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BigText('Chinese Side'),
-                    const SizedBox(height: 10),
+                    SizedBox(height: Dimensions.height10),
                     Row(
                       children: [
                         Wrap(
@@ -156,8 +160,9 @@ class _SliderScreenState extends State<SliderScreen> {
                         SmallText('Comments'),
                       ],
                     ),
-                    const SizedBox(height: 10),
+                    SizedBox(height: Dimensions.height10),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconAndTextWidget(
                           Icons.circle_sharp,

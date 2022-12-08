@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/Screens/slider.dart';
 import 'package:food_delivery/Widgets/big_text.dart';
 import 'package:food_delivery/Widgets/small_text.dart';
-import 'package:food_delivery/app_colors.dart';
+import 'package:food_delivery/utils/app_colors.dart';
 
 class MainFoodScreen extends StatefulWidget {
   const MainFoodScreen({Key? key}) : super(key: key);

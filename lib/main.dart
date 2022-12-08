@@ -3,6 +3,7 @@ import 'package:food_delivery/Screens/launch_screen.dart';
 import 'package:food_delivery/Screens/login_screen.dart';
 import 'package:food_delivery/Screens/main_food_screen.dart';
 import 'package:food_delivery/Screens/register_screen.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/main_food_screen',
       routes: {
