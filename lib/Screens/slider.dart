@@ -71,19 +71,19 @@ class _SliderScreenState extends State<SliderScreen> {
     Matrix4 matrix4 = Matrix4.identity();
     if (index == _currentPageValue.floor()) {
       var currentScale = 1 - (_currentPageValue - index) * (1 - _scaleFactor);
-      var currentTrans = _height + (1 - currentScale) / 2;
+      var currentTrans = _height * (1 - currentScale) / 2;
       matrix4 = Matrix4.diagonal3Values(1, currentScale, 1)
         ..setTranslationRaw(0, currentTrans, 0);
     } else if (index == _currentPageValue.floor() + 1) {
       var currentScale =
           _scaleFactor + (_currentPageValue - index + 1) * (1 - _scaleFactor);
-      var currentTrans = _height + (1 - currentScale) / 2;
+      var currentTrans = _height * (1 - currentScale) / 2;
       matrix4 = Matrix4.diagonal3Values(1, currentScale, 1);
       matrix4 = Matrix4.diagonal3Values(1, currentScale, 1)
         ..setTranslationRaw(0, currentTrans, 0);
     } else if (index == _currentPageValue.floor() - 1) {
       var currentScale = 1 - (_currentPageValue - index) * (1 - _scaleFactor);
-      var currentTrans = _height + (1 - currentScale) / 2;
+      var currentTrans = _height * (1 - currentScale) / 2;
       matrix4 = Matrix4.diagonal3Values(1, currentScale, 1);
       matrix4 = Matrix4.diagonal3Values(1, currentScale, 1)
         ..setTranslationRaw(0, currentTrans, 0);
