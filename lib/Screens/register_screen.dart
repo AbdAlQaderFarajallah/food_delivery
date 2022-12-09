@@ -18,8 +18,10 @@ class RegisterScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Image.asset('assets/images/food-delivery-logo.png'),
               const SizedBox(height: 20),
-              const Text('Register',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
+              const Text(
+                'Register',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+              ),
               const SizedBox(height: 20),
               TextFormFieldWidget(
                 type: TextInputType.text,

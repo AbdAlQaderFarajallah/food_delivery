@@ -1,11 +1,11 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Widgets/icon_and_text_widget.dart';
-import 'package:food_delivery/Widgets/small_text.dart';
+import 'package:food_delivery/Widgets/main_food_widgets/icon_and_text_widget.dart';
+import 'package:food_delivery/Widgets/text_widgets/small_text.dart';
 import 'package:food_delivery/utils/app_colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
 
-import '../Widgets/big_text.dart';
+import '../text_widgets/big_text.dart';
 
 class SliderScreen extends StatefulWidget {
   const SliderScreen({Key? key}) : super(key: key);
@@ -144,7 +144,7 @@ class _SliderScreenState extends State<SliderScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    BigText('Chinese Side'),
+                    BigText(text: 'Chinese Side'),
                     SizedBox(height: Dimensions.height10),
                     Row(
                       children: [
