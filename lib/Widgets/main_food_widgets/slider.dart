@@ -1,11 +1,8 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/Widgets/main_food_widgets/icon_and_text_widget.dart';
-import 'package:food_delivery/Widgets/text_widgets/small_text.dart';
+import 'package:food_delivery/Widgets/details_side.dart';
 import 'package:food_delivery/utils/app_colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
-
-import '../text_widgets/big_text.dart';
 
 class SliderScreen extends StatefulWidget {
   const SliderScreen({Key? key}) : super(key: key);
@@ -141,51 +138,7 @@ class _SliderScreenState extends State<SliderScreen> {
                     top: Dimensions.height15,
                     left: Dimensions.height15,
                     right: Dimensions.height15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: 'Chinese Side'),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                            5,
-                            (index) => const Icon(Icons.star,
-                                color: AppColors.mainColor, size: 15),
-                          ),
-                        ),
-                        SizedBox(width: Dimensions.width10),
-                        SmallText('4.5'),
-                        SizedBox(width: Dimensions.width15),
-                        SmallText('150'),
-                        const SizedBox(width: 3),
-                        SmallText('Comments'),
-                      ],
-                    ),
-                    SizedBox(height: Dimensions.height10),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconAndTextWidget(
-                          Icons.circle_sharp,
-                          'Normal',
-                          AppColors.iconColor1,
-                        ),
-                        IconAndTextWidget(
-                          Icons.location_on,
-                          '1.7Km',
-                          AppColors.mainColor,
-                        ),
-                        IconAndTextWidget(
-                          Icons.access_time_rounded,
-                          '32min',
-                          AppColors.iconColor2,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: const DetailsSide(text: 'Chinese Side'),
               ),
             ),
           ),

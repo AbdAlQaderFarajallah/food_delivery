@@ -11,7 +11,7 @@ class AppColors {
 
   static const Color paraColor = Color(0xFF8f837f);
 
-  static const Color buttonBackgroundColor = Color(0xFFf7f6f4);
+  static const Color buttonBackgroundColor = Color(0xffefefef);
 
   static const Color signColor = Color(0xFFa9a29f);
 

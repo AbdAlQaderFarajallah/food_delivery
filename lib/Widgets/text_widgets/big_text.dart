@@ -5,8 +5,9 @@ import 'package:food_delivery/utils/dimensions.dart';
 class BigText extends StatelessWidget {
   final Color color = const Color(0xFF332d2b);
   final String text;
+  double size;
 
-  BigText({required this.text, super.key});
+  BigText({required this.text, this.size = 0, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +17,8 @@ class BigText extends StatelessWidget {
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
         color: color,
-        fontSize: Dimensions.font20,
-        fontWeight: FontWeight.w400,
+        fontSize: size == 0 ? Dimensions.font20 : size,
+        fontWeight: FontWeight.w500,
       ),
     );
   }
