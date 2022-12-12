@@ -6,6 +6,8 @@ import 'package:food_delivery/Screens/main_food_screen.dart';
 import 'package:food_delivery/Screens/register_screen.dart';
 import 'package:get/get.dart';
 
+import 'Screens/recommended_food_details_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -17,13 +19,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/food_details_screen',
+      initialRoute: '/recommended_food_details_screen',
       routes: {
         '/launch_screen': (context) => const LaunchScreen(),
         '/login_screen': (context) => const LoginScreen(),
         '/register_screen': (context) => const RegisterScreen(),
         '/main_food_screen': (context) => const MainFoodScreen(),
         '/food_details_screen': (context) => const FoodDetailsScreen(),
+        '/recommended_food_details_screen': (context) =>
+            const RecommendedFoodDetailsScreen(),
       },
     );
   }
