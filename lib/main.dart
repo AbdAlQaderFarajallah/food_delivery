@@ -7,8 +7,11 @@ import 'package:food_delivery/Screens/register_screen.dart';
 import 'package:get/get.dart';
 
 import 'Screens/recommended_food_details_screen.dart';
+import 'helper/dependencies.dart' as dep;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dep.init();
   runApp(const MyApp());
 }
 
