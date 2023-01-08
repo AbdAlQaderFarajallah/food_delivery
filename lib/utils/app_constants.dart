@@ -6,4 +6,6 @@ class AppConstants {
   static const String popularProductURI = "/api/v1/products/popular";
   static const String recommendedProductURI =
       "/api/v1/products/popular/recommended";
+
+  static const String token = "DBToken";
 }
