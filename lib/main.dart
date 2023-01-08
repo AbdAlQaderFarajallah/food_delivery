@@ -7,6 +7,7 @@ import 'package:food_delivery/Screens/register_screen.dart';
 import 'package:get/get.dart';
 
 import 'Screens/recommended_food_details_screen.dart';
+import 'controllers/popular_product_controller.dart';
 import 'helper/dependencies.dart' as dep;
 
 void main() async {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.find<PopularProductController>().getPopularProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/recommended_food_details_screen',
