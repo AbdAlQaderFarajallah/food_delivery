@@ -1,8 +1,13 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Widgets/details_side.dart';
-import 'package:food_delivery/utils/app_colors.dart';
+import 'package:food_delivery/controllers/popular_product_controller.dart';
+import 'package:food_delivery/models/products_model.dart';
+import 'package:food_delivery/utils/app_constants.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:get/get.dart';
+
+import '../../utils/app_colors.dart';
 
 class SliderScreen extends StatefulWidget {
   const SliderScreen({Key? key}) : super(key: key);
@@ -37,34 +42,42 @@ class _SliderScreenState extends State<SliderScreen> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
-          height: Dimensions.pageView,
-          child: PageView.builder(
-            controller: pageController,
-            itemCount: 5,
-            itemBuilder: (context, position) {
-              return _pageItem(position);
-            },
-          ),
-        ),
-        DotsIndicator(
-          dotsCount: 5,
-          position: _currentPageValue,
-          decorator: DotsDecorator(
-            activeColor: AppColors.mainColor,
-            size: const Size.square(9),
-            activeSize: const Size(18, 9),
-            activeShape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+        // slider section
+        GetBuilder<PopularProductController>(builder: (popularProducts) {
+          return SizedBox(
+            height: Dimensions.pageView,
+            child: PageView.builder(
+              controller: pageController,
+              itemCount: popularProducts.popularProductList.length,
+              itemBuilder: (context, position) {
+                return _pageItem(
+                    position, popularProducts.popularProductList[position]);
+              },
             ),
-          ),
-        ),
+          );
+        }),
+        // dots
+        GetBuilder<PopularProductController>(builder: (popularProducts) {
+          return DotsIndicator(
+            dotsCount: popularProducts.popularProductList.isEmpty
+                ? 1
+                : popularProducts.popularProductList.length,
+            position: _currentPageValue,
+            decorator: DotsDecorator(
+              activeColor: AppColors.mainColor,
+              size: const Size.square(9),
+              activeSize: const Size(18, 9),
+              activeShape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(5),
+              ),
+            ),
+          );
+        }),
       ],
     );
   }
 
-  Widget _pageItem(int index) {
-    //
+  Widget _pageItem(int index, ProductModel popularProduct) {
     Matrix4 matrix4 = Matrix4.identity();
     if (index == _currentPageValue.floor()) {
       var currentScale = 1 - (_currentPageValue - index) * (1 - _scaleFactor);
@@ -100,9 +113,10 @@ class _SliderScreenState extends State<SliderScreen> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.radius30),
               color: const Color(0xFF69c5df),
-              image: const DecorationImage(
+              image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('assets/images/photo-3.jpeg'),
+                image: NetworkImage(
+                    "${AppConstants.baseURL}/uploads/${popularProduct.img!}"),
               ),
             ),
           ),
@@ -138,7 +152,7 @@ class _SliderScreenState extends State<SliderScreen> {
                     top: Dimensions.height15,
                     left: Dimensions.height15,
                     right: Dimensions.height15),
-                child: const DetailsSide(text: 'Chinese Side'),
+                child: DetailsSide(text: popularProduct.name!),
               ),
             ),
           ),
