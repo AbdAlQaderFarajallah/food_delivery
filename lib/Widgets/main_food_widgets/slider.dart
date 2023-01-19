@@ -44,17 +44,21 @@ class _SliderScreenState extends State<SliderScreen> {
       children: [
         // slider section
         GetBuilder<PopularProductController>(builder: (popularProducts) {
-          return SizedBox(
-            height: Dimensions.pageView,
-            child: PageView.builder(
-              controller: pageController,
-              itemCount: popularProducts.popularProductList.length,
-              itemBuilder: (context, position) {
-                return _pageItem(
-                    position, popularProducts.popularProductList[position]);
-              },
-            ),
-          );
+          return popularProducts.isLoaded
+              ? SizedBox(
+                  height: Dimensions.pageView,
+                  child: PageView.builder(
+                    controller: pageController,
+                    itemCount: popularProducts.popularProductList.length,
+                    itemBuilder: (context, position) {
+                      return _pageItem(position,
+                          popularProducts.popularProductList[position]);
+                    },
+                  ),
+                )
+              : const CircularProgressIndicator(
+                  color: AppColors.mainColor,
+                );
         }),
         // dots
         GetBuilder<PopularProductController>(builder: (popularProducts) {
