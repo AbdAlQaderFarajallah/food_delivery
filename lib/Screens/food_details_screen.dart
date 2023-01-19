@@ -38,7 +38,7 @@ class FoodDetailsScreen extends StatelessWidget {
             right: Dimensions.width20,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 AppIcon(icon: Icons.arrow_back),
                 AppIcon(icon: Icons.shopping_cart_outlined),
               ],
@@ -68,7 +68,7 @@ class FoodDetailsScreen extends StatelessWidget {
                   SizedBox(height: Dimensions.height30),
                   BigText(text: 'Introduce'),
                   SizedBox(height: Dimensions.height20),
-                  Expanded(
+                  const Expanded(
                     child: SingleChildScrollView(
                       child: ExpandableTextWidget(
                           text:

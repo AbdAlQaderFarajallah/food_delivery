@@ -4,6 +4,7 @@ import 'package:food_delivery/Screens/launch_screen.dart';
 import 'package:food_delivery/Screens/login_screen.dart';
 import 'package:food_delivery/Screens/main_food_screen.dart';
 import 'package:food_delivery/Screens/register_screen.dart';
+import 'package:food_delivery/controllers/recommended_product_controller.dart';
 import 'package:get/get.dart';
 
 import 'Screens/recommended_food_details_screen.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.find<PopularProductController>().getPopularProductList();
+    Get.find<RecommendedProductController>().getRecommendedProductList();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/main_food_screen',

@@ -52,7 +52,7 @@ class _MainFoodScreenState extends State<MainFoodScreen> {
               margin: EdgeInsets.only(left: Dimensions.width30),
               child: Row(
                 children: [
-                  BigText(text: 'Popular'),
+                  BigText(text: 'Recommended'),
                 ],
               ),
             ),

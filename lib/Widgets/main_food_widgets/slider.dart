@@ -119,8 +119,9 @@ class _SliderScreenState extends State<SliderScreen> {
               color: const Color(0xFF69c5df),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: NetworkImage(
-                    "${AppConstants.baseURL}/uploads/${popularProduct.img!}"),
+                image: NetworkImage(AppConstants.baseURL +
+                    AppConstants.uploadURL +
+                    popularProduct.img!),
               ),
             ),
           ),
